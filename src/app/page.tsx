@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main style={{ overflowX: 'hidden', width: '100%' }}>
         <Hero />
         <TargetAudience />
         <HowItWorks />

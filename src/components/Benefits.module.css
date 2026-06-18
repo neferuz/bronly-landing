@@ -2,6 +2,7 @@
   padding: 48px 0;
   background-color: var(--color-bg-light);
   position: relative;
+  overflow: hidden;
 }
 
 .backgroundOrbs {
