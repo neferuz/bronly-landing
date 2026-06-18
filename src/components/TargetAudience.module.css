@@ -216,4 +216,45 @@
     width: 40px;
     height: 40px;
   }
+  .card {
+    min-width: 260px;
+    max-width: 260px;
+  }
+  .imageWrapper {
+    height: 200px;
+  }
+  .content {
+    padding: 16px;
+  }
+  .cardTitle {
+    font-size: 17px;
+    margin-bottom: 6px;
+  }
+  .cardDesc {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 420px) {
+  .card {
+    min-width: 220px;
+    max-width: 220px;
+  }
+  .imageWrapper {
+    height: 160px;
+  }
+  .content {
+    padding: 12px;
+  }
+  .cardTitle {
+    font-size: 15px;
+  }
+  .cardDesc {
+    font-size: 12px;
+  }
+  .icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
 }
