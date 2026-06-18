@@ -1,0 +1,226 @@
+.section {
+  padding: 48px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.patternOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.03) 2px, transparent 2px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.cardsWrapper {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 20px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.badCard {
+  background: var(--color-white);
+  border-radius: 24px;
+  padding: 36px 32px;
+  flex: 1;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: none;
+}
+
+.goodCard {
+  background: rgba(255, 106, 0, 0.02);
+  border-radius: 24px;
+  padding: 36px 32px;
+  flex: 1;
+  border: 1px solid rgba(255, 106, 0, 0.3);
+  box-shadow: none;
+  position: relative;
+}
+
+.cardBadge {
+  position: absolute;
+  top: -14px;
+  right: 24px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: none;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.iconWrapperBad {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #f5f5f5;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconWrapperBad svg {
+  width: 20px;
+  height: 20px;
+}
+
+.iconWrapperGood {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(42, 171, 238, 0.1); /* Telegram Blue with opacity */
+  color: #2AABEE; /* Official Telegram Blue */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconWrapperGood svg {
+  width: 24px;
+  height: 24px;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #666;
+  margin: 0;
+}
+
+.cardTitleGood {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  margin: 0;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-text-dark);
+}
+
+.badCard .list li {
+  color: #666;
+}
+
+.badIcon {
+  color: #ff4d4f;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.goodIcon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+@media (max-width: 992px) {
+  .cardsWrapper {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 48px 0;
+  }
+  .header {
+    margin-bottom: 32px;
+  }
+  .title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .subtitle {
+    font-size: 15px;
+  }
+  .badCard, .goodCard {
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+  .cardHeader {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    gap: 12px;
+  }
+  .cardTitle {
+    font-size: 16px;
+  }
+  .cardTitleGood {
+    font-size: 18px;
+  }
+  .list {
+    gap: 12px;
+  }
+  .list li {
+    font-size: 13px;
+    gap: 10px;
+  }
+  .cardBadge {
+    top: -12px;
+    right: 16px;
+    padding: 4px 12px;
+    font-size: 11px;
+  }
+}

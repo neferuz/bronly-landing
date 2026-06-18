@@ -1,0 +1,219 @@
+.section {
+  padding: 100px 0 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  gap: 24px;
+}
+
+.headerText {
+  max-width: 600px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+.controlBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  border: 1px solid rgba(0,0,0,0.05);
+  color: var(--color-text-dark);
+  cursor: pointer;
+  transition: all var(--transition-speed);
+}
+
+.controlBtn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.carouselContainer {
+  position: relative;
+  width: 100%;
+}
+
+.carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-top: 24px;
+  margin-top: -24px;
+  padding-bottom: 24px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  cursor: grab;
+}
+
+.carousel.dragging {
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+  cursor: grabbing;
+  user-select: none;
+}
+
+.carousel.dragging .card {
+  pointer-events: none; /* Prevent clicking images/links while dragging */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.card {
+  min-width: 320px;
+  max-width: 320px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background-color: var(--color-white);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.015);
+  border: 1px solid rgba(0,0,0,0.03);
+  transition: transform var(--transition-speed);
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.sectionLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.6;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.sectionLinePath {
+  stroke-dasharray: 4000;
+  stroke-dashoffset: 4000;
+  animation: drawSectionLine 15s ease-in-out infinite alternate;
+}
+
+@keyframes drawSectionLine {
+  0% { stroke-dashoffset: 4000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
+}
+
+.icon {
+  position: absolute;
+  bottom: 12px;
+  left: 16px;
+  color: var(--color-primary);
+  background-color: var(--color-white);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.content {
+  padding: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.cardDesc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 64px 0 48px;
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .title {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    font-size: 15px;
+  }
+  .controls {
+    display: flex;
+    align-self: flex-end;
+  }
+  .controlBtn {
+    width: 40px;
+    height: 40px;
+  }
+}
