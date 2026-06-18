@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Scissors, Sparkles, Stethoscope, Paintbrush, Activity } from 'lucide-react';
 import styles from './TargetAudience.module.css';
 
@@ -54,17 +54,16 @@ export default function TargetAudience() {
     carouselRef.current.scrollLeft = scrollLeftState - walk;
   };
 
-  const headerVariants = {
+  const headerVariants: Variants = {
     hidden: { opacity: 0, y: 20, filter: "blur(8px)" },
     visible: { 
       opacity: 1, 
-      y: 0, 
-      filter: "blur(0px)",
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
     }
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 40, filter: "blur(12px)" },
     visible: (i: number) => ({
       opacity: 1,
@@ -73,7 +72,7 @@ export default function TargetAudience() {
       transition: {
         delay: i * 0.1,
         duration: 0.8,
-        ease: [0.16, 1, 0.3, 1]
+        ease: "easeOut"
       }
     })
   };

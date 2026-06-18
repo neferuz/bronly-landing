@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import styles from './HowItWorks.module.css';
 
@@ -23,8 +23,8 @@ export default function HowItWorks() {
     }
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, x: -30 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" } }
   };
 
